@@ -22,9 +22,25 @@ if __name__ == '__main__':
 
         else:
             read = int(read)
-            carried = carried + read
+            carried += read
 
-    print(max(calories))
+    calories.sort(reverse=True)
+    print(calories)
+
+    print(f'Elve #{calories.index(max(calories)) + 1} carries the most ({max(calories)}) calories')
+
+# part two
+    topThree = 0
+    for i in range(3):
+        topThree += max(calories)
+        print(max(calories))
+        calories.remove(max(calories))
+
+
+    print(f'The top three elves carry {topThree} calories')
+
+
+
 
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
